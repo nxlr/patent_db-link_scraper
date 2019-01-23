@@ -125,8 +125,9 @@ if __name__ == '__main__':
         sheet1.write(serial_number, 1, country)
         sheet1.write(serial_number, 2, link)
         sheet1.write(serial_number, 3, title)
-        print(serial_number)
+        
         serial_number += 1
+        print(serial_number)
         
     wb.save('countries_patent-db_links.xls') 
     end = time.time()
