@@ -8,6 +8,7 @@ import re
 import time
 import xlwt 
 from xlwt import Workbook 
+from urllib.parse import unquote
 
 # returns all the wipo members as mentioned on the website
 def wipo_members(): 
@@ -71,6 +72,7 @@ def parse_results(results_html):
             link_tmp = link['href'][7:]
             head, sep, tail = link_tmp.partition('&')
             link = head
+            link = unquote(link)
             title = title.get_text()
             result_dict = {'link': link, 'title': title}
     return result_dict
@@ -129,7 +131,7 @@ if __name__ == '__main__':
         serial_number += 1
         print(serial_number)
         
-    wb.save('countries_patent-db_links.xls') 
+    wb.save('countries_patent-db_links.xlsx') 
     end = time.time()
     print(end - start)
     
