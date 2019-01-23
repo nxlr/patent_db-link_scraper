@@ -43,7 +43,7 @@ google_form = browser.select_form()
 # test whether form is selected or not
 # browser.get_current_form().print_summary()
 
-browser["q"] = "ind vs nz"
+browser["q"] = "india patent database"
 
 response = browser.submit_selected()
 
